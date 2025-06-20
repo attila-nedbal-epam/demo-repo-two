@@ -1,0 +1,39 @@
+# Example Terraform variables file for Weather Datetime API deployment
+# Copy this file to terraform.tfvars and fill in your values
+
+# AWS Configuration
+aws_region = "us-east-1"
+
+# Project Configuration
+project_name = "weather-datetime-api"
+environment = "production"
+
+# ECS Configuration
+ecs_desired_count = 2
+ecs_min_capacity = 1
+ecs_max_capacity = 10
+
+# ECR Configuration (replace with your actual ECR URL)
+ecr_repository_url = "123456789012.dkr.ecr.us-east-1.amazonaws.com/weather-datetime-api"
+image_tag = "latest"
+
+# API Configuration (replace with your actual OpenWeatherMap API key)
+openweather_api_key = "your-openweather-api-key-here"
+
+# Network Configuration
+allowed_cidr_blocks = ["0.0.0.0/0"]
+
+# Logging Configuration
+log_retention_days = 14
+
+# Common Tags
+common_tags = {
+  Owner = "your-name"
+  Project = "weather-datetime-api"
+  Environment = "production"
+  ManagedBy = "terraform"
+}
+
+# Optional Domain Configuration (uncomment if using custom domain)
+# domain_name = "api.example.com"
+# acm_certificate_arn = "arn:aws:acm:us-east-1:123456789012:certificate/your-certificate-id"
